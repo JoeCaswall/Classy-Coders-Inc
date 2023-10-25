@@ -7,7 +7,7 @@ class Employees {
   }
   static getTotalPayroll() {
     let total = 0;
-    for (x of allEmployees) {
+    for (let x of this.allEmployees) {
       total += x.#salary;
     }
     return total;

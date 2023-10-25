@@ -15,16 +15,6 @@ class SalesPerson extends Employees {
   }
 }
 
-const malik = new SalesPerson("Malik", "Enterprise Sale Associate", 90000, [
-  "Vine",
-  "MySpace",
-  "Shutterfly",
-]);
-console.log(malik.getSalesNumber()); // 0
-malik.makeSale(10500);
-malik.makeSale(20000);
-console.log(malik.getSalesNumber());
-
 module.exports = {
   SalesPerson,
 };
