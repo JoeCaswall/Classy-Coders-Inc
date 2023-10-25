@@ -13,6 +13,9 @@ class Employees {
     return total;
   }
   constructor(name, title, salary) {
+    if (salary < 0) {
+      throw new Error("Salary cannot be negative");
+    }
     this.name = name;
     this.title = title;
     this.#salary = salary;
@@ -20,6 +23,9 @@ class Employees {
     Employees.allEmployees.push(this);
   }
   setSalary(amount) {
+    if (amount < 0) {
+      throw new Error("Salary cannot be negative");
+    }
     this.#salary = amount;
   }
   getSalary(amount) {
@@ -32,6 +38,10 @@ class Employees {
     if (command === "hire") {
       this.#isHired = true;
     } else if (command === "fire") this.#isHired = false;
+  }
+  promote(newTitle, salaryIncrease) {
+    this.title = newTitle;
+    this.#salary += salaryIncrease;
   }
 }
 
